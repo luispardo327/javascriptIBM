@@ -27,3 +27,10 @@ function show(){
     console.log(functionVar); // Lanza ReferenceError
     console.log(functionLet); // Lanza ReferenceError
     console.log(functionConst); // Lanza ReferenceError
+
+
+
+    {
+        let nuevaVariable = alcance;
+        const sinCambio = ejemplo;
+    }
