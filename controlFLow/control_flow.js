@@ -54,3 +54,10 @@ switch (UserType){
 }
 
 console.log("user category:", userCategory)
+
+// ejemplo cuatro 
+
+let isAuthenticated = true;
+let authenticationStatus = isAuthenticated ? "Authenticated" : "Not authenticated";
+
+console.log("Authentication Status:", authenticationStatus);
