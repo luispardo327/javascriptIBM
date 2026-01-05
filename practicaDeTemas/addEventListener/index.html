@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>click en el boton</title>
+</head>
+<body>
+
+    <!-- ejercicio de click en el boton -->
+    <button id="myButton">click aqui</button>
+    <p id="output"></p>
+
+
+<!-- ejercicio de mostrar texto de lo que se escribe en en la entrada  -->
+    <h1>Change  Event Handling</h1>
+    <input type="text" id="myInput">
+    <p id="salida"></p>
+
+    <!-- ejercicio de mostrar la tecla presionada  -->
+    <h1>Manejo de eventos keydown</h1>
+    <input type="text" id="entradaDos">
+    <p id="salidaDos"></p>
+
+
+    <h1>manejo de eventos al pasar el mouse</h1>
+    <div id="myDiv">hover over me</div>
+    <p id="salidaTres"></p>
+
+    <script>
+        const button = document.getElementById('myButton');
+        const output = document.getElementById('output');
+
+        button.onclick =  function(){
+            output.textContent = "hiciste click en el boton";
+        };
+
+
+        const input = document.getElementById('myInput');
+        const salida = document.getElementById('salida');
+
+        input.onchange = function(){
+            salida.textContent = `valor cambiado a: ${input.value}`;
+        };
+
+        const entradaDos = document.getElementById('entradaDos');
+        const salidaDos = document.getElementById('salidaDos');
+
+        entradaDos.onkeydown = function(event){
+            salidaDos.textContent = `tecla presionada: ${event.key}`;
+        };
+
+
+        const div = document.getElementById('myDiv');
+        const salidaTres = document.getElementById('salidaTres');
+
+        div.onmouseover = function(){
+            salidaTres.textContent = "mouse over the div!";
+        };
+
+        div.onmouseout = function(){
+            salidaTres.textContent = ""; 
+        }
+    </script>
+</body>
+</html>
