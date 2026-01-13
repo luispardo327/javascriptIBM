@@ -22,13 +22,21 @@ function addBook (){
     }
 }
 
+function clearInputs() {
+    document.getElementById('bookName').value = "";
+    document.getElementById('authorName').value = "";
+    document.getElementById('bookDescription').value = "";
+    document.getElementById('pagesNumber').value = "";
+}
+
 function showbooks() {
     const booksDiv = books.map((book, index) => `<h1>Número de libro: ${index + 1}</h1>
         <p><strong>Nombre del libro: </strong>${book.name}</p>
         <p><strong>Nombre del autor:</strong> ${book.authorName}</p>
         <p><strong>Descripción del libro:</strong> ${book.bookDescription}</p>
         <p><strong>Número de páginas:</strong> ${book.pagesNumber} página(s)</p>
-        <button onclick="editbook(${index})">Editar</button>`
+        <button onclick="editbook(${index})">Editar</button>
+        <button onclick="deleteBook(${index})">eliminar</button>`
     );
     document.getElementById('books').innerHTML = booksDiv.join('');
 }
@@ -43,4 +51,8 @@ function editbook(index) {
     showbooks(); // Actualizar lista
   }
 
+  function deleteBook (index){
+    books.splice(index, 1); 
+    showbooks();
+  }
   
