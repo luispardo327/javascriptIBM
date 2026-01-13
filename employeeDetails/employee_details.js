@@ -6,8 +6,9 @@ const employees = [
 ];
 
 function displayEmployees (){
-    const totalEmployees = employees.map(employee => `<p>${employee.id}: ${employee.name} - ${employee.department} - $${employee-salary}</p>`).join('');
+    const totalEmployees = employees.map(employee => `<p>${employee.id}: ${employee.name}:  ${employee.department}:  $${employee.salary}:</p>`).join('');
     document.getElementById('employeesDetails').innerHTML = totalEmployees;
+    console.log("funciono ?")
 }
 
 function  calculateTotalSalaries (){
@@ -25,7 +26,7 @@ function displayHREmployees (){
 function findEmployeeById (employeeId){
     const foundEmployee = employees.find(employee => employee.id === employeeId);
     if (foundEmployee){
-        document.getElementById('employeesDetails').innerHTML =`<p>${foundEmployee.id}: ${foundEmployee.name}: ${foundEmployee.name} - ${foundEmployee.department} - $${foundEmployee.salary}</p>`;
+        document.getElementById('employeesDetails').innerHTML =`<p>${foundEmployee.id}: ${foundEmployee.name}: ${foundEmployee.age} - ${foundEmployee.department} - $${foundEmployee.salary}</p>`;
     } else{
         document.getElementById('employeesDetails').innerHTML = 'no se ha encontrado ningún empleado con este ID';
        }
