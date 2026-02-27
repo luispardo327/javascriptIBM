@@ -11,7 +11,12 @@
     <input type="number" id="input1"><br><br>
     <label for="input2">Ingresa Número 2:</label>
     <input type="number" id="input2"><br><br>
-    <button onclick="performOperation()">Realizar Operación</button>
+    <button id="addition" onclick="currentValue = 'addition' " >+</button>
+    <button id="subtraction" onclick="currentValue = 'subtraction' " >-</button>
+    <button id="split" onclick="currentValue = 'split' " >/</button>
+    <button id="multiply" onclick="currentValue = 'multiply' " >X</button>
+    <button onclick="performOperation()">=</button>
+
     <p id="result"></p>
     <script src="./debug_code.js"></script>
 </body>
