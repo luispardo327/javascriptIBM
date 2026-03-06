@@ -2,7 +2,7 @@ const taskInput = document.getElementById('taskInput');
 const addTaskBtn = document.getElementById("addTaskBtn");
 const taskList = document.getElementById("taskList");
 const clearCompletedBtn = document.getElementById("clearCompletedBtn");
-
+const  deleteAllTasksBtn = document.getElementById('deleteAllTasks');
 let tasks = [];
 
 function addTask() {
@@ -35,7 +35,20 @@ function clearCompletedTasks() {
     displayTasks();
 }
 
+function deleteAllTasks (){
+    if (confirm("¿Deseas borrar todo?")) {
+        tasks = [];
+         displayTasks()
+    }
+}
+
 addTaskBtn.addEventListener("click", addTask);
+taskInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter'){
+        addTask();  
+    }
+});
 clearCompletedBtn.addEventListener("click", clearCompletedTasks);
+deleteAllTasksBtn.addEventListener('click', deleteAllTasks)
 
 displayTasks();
